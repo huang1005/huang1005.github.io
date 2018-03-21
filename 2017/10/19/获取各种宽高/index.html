@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="闭包什么是闭包 MDN解释:闭包是一个函数和声明该函数的词法环境的组合; 本人认为 函数都可以说是一个闭包,但是只有在一个函数中引用了另一个函数的变量、这样才是一个有意义的闭包  12345678910111213141516// father 在这里就构成了一个有意义的闭包  对象中的函数引用到了 father 的 数据 function father() &amp;#123;        var a">
+<meta name="description" content="Javascript各种宽高IE：    document.body.clientWidth ==&amp;gt; BODY对象宽度    document.body.clientHeight ==&amp;gt; BODY对象高度    document.documentElement.clientWidth ==&amp;gt; 可见区域宽度    document.documentElement.clientHei">
 <meta name="keywords" content="学习,随笔,心情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包的详解">
-<meta property="og:url" content="http://yoursite.com/2017/10/02/闭包/index.html">
+<meta property="og:title" content="js中获取各种宽高">
+<meta property="og:url" content="http://yoursite.com/2017/10/19/获取各种宽高/index.html">
 <meta property="og:site_name" content="阿鑫小屋">
-<meta property="og:description" content="闭包什么是闭包 MDN解释:闭包是一个函数和声明该函数的词法环境的组合; 本人认为 函数都可以说是一个闭包,但是只有在一个函数中引用了另一个函数的变量、这样才是一个有意义的闭包  12345678910111213141516// father 在这里就构成了一个有意义的闭包  对象中的函数引用到了 father 的 数据 function father() &amp;#123;        var a">
+<meta property="og:description" content="Javascript各种宽高IE：    document.body.clientWidth ==&amp;gt; BODY对象宽度    document.body.clientHeight ==&amp;gt; BODY对象高度    document.documentElement.clientWidth ==&amp;gt; 可见区域宽度    document.documentElement.clientHei">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T14:35:29.711Z">
+<meta property="og:updated_time" content="2018-03-21T07:33:07.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包的详解">
-<meta name="twitter:description" content="闭包什么是闭包 MDN解释:闭包是一个函数和声明该函数的词法环境的组合; 本人认为 函数都可以说是一个闭包,但是只有在一个函数中引用了另一个函数的变量、这样才是一个有意义的闭包  12345678910111213141516// father 在这里就构成了一个有意义的闭包  对象中的函数引用到了 father 的 数据 function father() &amp;#123;        var a">
+<meta name="twitter:title" content="js中获取各种宽高">
+<meta name="twitter:description" content="Javascript各种宽高IE：    document.body.clientWidth ==&amp;gt; BODY对象宽度    document.body.clientHeight ==&amp;gt; BODY对象高度    document.documentElement.clientWidth ==&amp;gt; 可见区域宽度    document.documentElement.clientHei">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/02/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/19/获取各种宽高/"/>
 
 
 
 
 
-  <title>闭包的详解 | 阿鑫小屋</title>
+  <title>js中获取各种宽高 | 阿鑫小屋</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/02/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/获取各种宽高/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hx">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包的详解</h1>
+          <h1 class="post-title" itemprop="name headline">js中获取各种宽高</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-02T14:35:12+08:00">
-                2017-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T17:12:29+08:00">
+                2017-10-19
               </time>
             
 
@@ -342,23 +342,32 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><ul>
-<li>MDN解释:闭包是一个函数和声明该函数的词法环境的组合;</li>
-<li>本人认为 函数都可以说是一个闭包,但是只有在一个函数中引用了另一个函数的变量、这样才是一个有意义的闭包</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// father 在这里就构成了一个有意义的闭包  对象中的函数引用到了 father 的 数据</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            num: <span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">                a += s;</span><br><span class="line">            &#125;,</span><br><span class="line">            query: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> c = father();</span><br><span class="line">    c.query();  <span class="comment">// 没有改变a数据之前的值 10</span></span><br><span class="line">    c.num(<span class="number">5</span>);</span><br><span class="line">    c.query();  <span class="comment">// 改变a数据之后的值15</span></span><br></pre></td></tr></table></figure>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><ul>
-<li><p>私有化数据（私有化数据指的是：它并不是一个公共的数据、你只有取到它、才可以使用）例如对象可以私有化数据；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  私有化数据(对象)</span></span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        num:<span class="number">12</span>,</span><br><span class="line">        age:<span class="number">15</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> a = obj.num;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="comment">// 在这里 obj中的 num 就是一个私有数据 你必须通过obj 才可以用到num</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保持数据（指的是当你用到数据时，将改变这个数据）;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保持数据</span></span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">           num: <span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">               a += s;</span><br><span class="line">           &#125;,</span><br><span class="line">           query: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(a);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> c = father();</span><br><span class="line">   c.query();  <span class="comment">// 没有改变a数据之前的值 10</span></span><br><span class="line">   c.num(<span class="number">5</span>);</span><br><span class="line">   c.query();  <span class="comment">// 改变a数据之后的值15</span></span><br><span class="line">   <span class="comment">//  这里使用num 中a后将a的数据改变了;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="闭包的缺点"><a href="#闭包的缺点" class="headerlink" title="闭包的缺点"></a>闭包的缺点</h2><ul>
-<li>闭包会导致,函数执行完毕之后,无法弹栈. 会导致内存溢出.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">        </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 这里会导致 fn的这个函数一直在弹出栈中因为return的这个函数一直再用fn这个函数的a 变量 无法弹出 会导致内存泄漏</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h3 id="Javascript各种宽高"><a href="#Javascript各种宽高" class="headerlink" title="Javascript各种宽高"></a>Javascript各种宽高</h3><p><strong>IE</strong>：<br>    document.body.clientWidth ==&gt; BODY对象宽度<br>    document.body.clientHeight ==&gt; BODY对象高度<br>    document.documentElement.clientWidth ==&gt; 可见区域宽度<br>    document.documentElement.clientHeight ==&gt; 可见区域高度<br><strong>FireFox</strong>：<br>    document.body.clientWidth ==&gt; BODY对象宽度<br>    document.body.clientHeight ==&gt; BODY对象高度<br>    document.documentElement.clientWidth ==&gt; 可见区域宽度<br>    document.documentElement.clientHeight ==&gt; 可见区域高度<br><strong>Opera</strong>：<br>    document.body.clientWidth ==&gt; 可见区域宽度<br>    document.body.clientHeight ==&gt; 可见区域高度<br>    document.documentElement.clientWidth ==&gt; 页面对象宽度（即BODY对象宽度加上Margin宽）<br>    document.documentElement.clientHeight ==&gt; 页面对象高度（即BODY对象高度加上Margin高）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.clientWidth); <span class="comment">//网页可见区域宽(body)</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.clientHeight); <span class="comment">//网页可见区域高(body)</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.offsetWidth); <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.offsetHeight); <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.scrollWidth); <span class="comment">//网页正文全文宽，包括有滚动条时的未见区域</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.scrollHeight); <span class="comment">//网页正文全文高，包括有滚动条时的未见区域</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.scrollTop); <span class="comment">//网页被卷去的Top(滚动条)</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">document</span>.body.scrollLeft); <span class="comment">//网页被卷去的Left(滚动条)</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screenTop); <span class="comment">//浏览器距离Top</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screenLeft); <span class="comment">//浏览器距离Left</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screen.height); <span class="comment">//屏幕分辨率的高</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screen.width); <span class="comment">//屏幕分辨率的宽</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screen.availHeight); <span class="comment">//屏幕可用工作区的高</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">window</span>.screen.availWidth); <span class="comment">//屏幕可用工作区的宽</span></span><br></pre></td></tr></table></figure>
+<h3 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h3><p><strong>宽高</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).height()) <span class="comment">//浏览器当前窗口可视区域高度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).height() <span class="comment">//浏览器当前窗口文档的高度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>.body).height(); <span class="comment">//浏览器当前窗口文档body的高度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>); <span class="comment">//浏览器当前窗口文档body的总高度 包括border padding margin</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).width(); <span class="comment">//浏览器当前窗口可视区域宽度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).width(); <span class="comment">//浏览器当前窗口文档对象宽度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>.body).width(); <span class="comment">//浏览器当前窗口文档body的宽度</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>); <span class="comment">//浏览器当前窗口文档body的总宽度 包括border padding margin</span></span><br></pre></td></tr></table></figure>
+<p><strong>offset()</strong>:</p>
+<blockquote>
+<p> 方法返回或设置匹配元素相对于文档的偏移（位置）。</p>
+</blockquote>
+<blockquote>
+<p>返回第一个匹配元素的偏移坐标。</p>
+</blockquote>
+<blockquote>
+<p>该方法返回的对象包含两个整型属性：top 和 left，以像素计。此方法只对可见元素有效</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).offset().left;</span><br></pre></td></tr></table></figure>
+<p><strong>position()</strong>:</p>
+<blockquote>
+<p>方法返回匹配元素相对于定位父元素的位置（偏移）。</p>
+</blockquote>
+<blockquote>
+<p> 该方法返回的对象包含两个整型属性：top 和 left，以像素计。</p>
+</blockquote>
+<blockquote>
+<p> 此方法只对可见元素有效。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).position().left;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -393,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/02/沙箱详解/" rel="next" title="沙箱的详解">
-                <i class="fa fa-chevron-left"></i> 沙箱的详解
+              <a href="/2017/10/02/闭包/" rel="next" title="闭包的详解">
+                <i class="fa fa-chevron-left"></i> 闭包的详解
               </a>
             
           </div>
@@ -403,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/19/获取各种宽高/" rel="prev" title="js中获取各种宽高">
-                js中获取各种宽高 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/29/call-apply-和bind-方法详解/" rel="prev" title="call apply 和bind 方法详解">
+                call apply 和bind 方法详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -551,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的作用"><span class="nav-number">1.2.</span> <span class="nav-text">闭包的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的缺点"><span class="nav-number">1.3.</span> <span class="nav-text">闭包的缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript各种宽高"><span class="nav-number">1.</span> <span class="nav-text">Javascript各种宽高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jquery"><span class="nav-number">2.</span> <span class="nav-text">Jquery</span></a></li></ol></div>
             
 
           </div>
